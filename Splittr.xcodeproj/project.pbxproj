@@ -21,6 +21,7 @@
 		04AF08CC241EDE730013DD8B /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF08CA241EDE730013DD8B /* ItemCell.xib */; };
 		04AF08D02420055F0013DD8B /* AdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */; };
 		04AF08D2242006670013DD8B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF08D1242006670013DD8B /* Calculator.swift */; };
+		8EE818488EDB6C2F2F20A473 /* Pods_Splittr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5973783055661B6DD38EEB15 /* Pods_Splittr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		04AF08CA241EDE730013DD8B /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsViewController.swift; sourceTree = "<group>"; };
 		04AF08D1242006670013DD8B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		5973783055661B6DD38EEB15 /* Pods_Splittr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splittr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABBA3BE7DC9CD25696F71C26 /* Pods-Splittr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splittr.debug.xcconfig"; path = "Target Support Files/Pods-Splittr/Pods-Splittr.debug.xcconfig"; sourceTree = "<group>"; };
+		D8FCC92156333340E6BE4067 /* Pods-Splittr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splittr.release.xcconfig"; path = "Target Support Files/Pods-Splittr/Pods-Splittr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EE818488EDB6C2F2F20A473 /* Pods_Splittr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +64,8 @@
 				04887245241ECA4100BDDD5C /* Default-568h@2x.png */,
 				040E1CE82407273D00A8AA8D /* Splittr */,
 				040E1CE72407273D00A8AA8D /* Products */,
-				4A2C0DAAE7DCC10DA18CC6A0 /* Pods */,
+				7DB3789744CB8ACA45344473 /* Pods */,
+				7D5D773F080305BBAEC27AE7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,10 +130,21 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4A2C0DAAE7DCC10DA18CC6A0 /* Pods */ = {
+		7D5D773F080305BBAEC27AE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5973783055661B6DD38EEB15 /* Pods_Splittr.framework */,
 			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7DB3789744CB8ACA45344473 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ABBA3BE7DC9CD25696F71C26 /* Pods-Splittr.debug.xcconfig */,
+				D8FCC92156333340E6BE4067 /* Pods-Splittr.release.xcconfig */,
+			);
+			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -138,9 +155,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 040E1CFA2407274000A8AA8D /* Build configuration list for PBXNativeTarget "Splittr" */;
 			buildPhases = (
+				DBF3033BB236FB6CC5014C40 /* [CP] Check Pods Manifest.lock */,
 				040E1CE22407273D00A8AA8D /* Sources */,
 				040E1CE32407273D00A8AA8D /* Frameworks */,
 				040E1CE42407273D00A8AA8D /* Resources */,
+				B8C22B0105D6B6AE829156B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -198,6 +217,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8C22B0105D6B6AE829156B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Splittr/Pods-Splittr-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Splittr/Pods-Splittr-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Splittr/Pods-Splittr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBF3033BB236FB6CC5014C40 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Splittr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		040E1CE22407273D00A8AA8D /* Sources */ = {
@@ -354,6 +415,7 @@
 		};
 		040E1CFB2407274000A8AA8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABBA3BE7DC9CD25696F71C26 /* Pods-Splittr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -372,6 +434,7 @@
 		};
 		040E1CFC2407274000A8AA8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8FCC92156333340E6BE4067 /* Pods-Splittr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

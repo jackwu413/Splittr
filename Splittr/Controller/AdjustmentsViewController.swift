@@ -53,6 +53,7 @@ class AdjustmentsViewController: UIViewController {
             let destinationVC = segue.destination as! ResultsViewController
             print("payments size on adjustments page: \(payments.count)")
             destinationVC.payments = payments
+            destinationVC.items = items
         }
     }
     

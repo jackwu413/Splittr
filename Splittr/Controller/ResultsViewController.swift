@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    let realm = try! Realm()
     var payments: [String: Float]?
+    var items: [Item]?
     var keys: [String] = []
     
     override func viewDidLoad() {
@@ -24,7 +27,18 @@ class ResultsViewController: UIViewController {
         tableView.reloadData()
     }
     
-
+    @IBAction func donePressed(_ sender: UIButton) {
+        //Persist Data to realm
+//        do {
+//            try realm.write {
+//                realm.add(items!)
+//            }
+//        } catch {
+//            print("Error saving context, \(error)")
+//        }
+        //Navigate back to home screen
+    }
+    
 }
 
 extension ResultsViewController: UITableViewDataSource {
