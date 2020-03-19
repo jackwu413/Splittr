@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,11 @@
 		040E1CF12407273D00A8AA8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CEF2407273D00A8AA8D /* Main.storyboard */; };
 		040E1CF32407274000A8AA8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CF22407274000A8AA8D /* Assets.xcassets */; };
 		040E1CF62407274000A8AA8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CF42407274000A8AA8D /* LaunchScreen.storyboard */; };
+		045315462423EA0600225A79 /* EntryAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045315452423EA0600225A79 /* EntryAlert.storyboard */; };
+		045315482423EA8F00225A79 /* EntryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045315472423EA8E00225A79 /* EntryAlertViewController.swift */; };
+		0453154C242402BE00225A79 /* EntryAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453154B242402BE00225A79 /* EntryAlertService.swift */; };
+		0453155124240DB000225A79 /* BuyerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453154F24240DB000225A79 /* BuyerCell.swift */; };
+		0453155224240DB000225A79 /* BuyerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0453155024240DB000225A79 /* BuyerCell.xib */; };
 		04887246241ECA4100BDDD5C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04887245241ECA4100BDDD5C /* Default-568h@2x.png */; };
 		04887248241ECC6D00BDDD5C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04887247241ECC6D00BDDD5C /* Constants.swift */; };
 		0488724C241ED42E00BDDD5C /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488724B241ED42E00BDDD5C /* EntryViewController.swift */; };
@@ -32,6 +37,11 @@
 		040E1CF22407274000A8AA8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040E1CF52407274000A8AA8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040E1CF72407274000A8AA8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		045315452423EA0600225A79 /* EntryAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EntryAlert.storyboard; sourceTree = "<group>"; };
+		045315472423EA8E00225A79 /* EntryAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAlertViewController.swift; sourceTree = "<group>"; };
+		0453154B242402BE00225A79 /* EntryAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAlertService.swift; sourceTree = "<group>"; };
+		0453154F24240DB000225A79 /* BuyerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyerCell.swift; sourceTree = "<group>"; };
+		0453155024240DB000225A79 /* BuyerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuyerCell.xib; sourceTree = "<group>"; };
 		04887245241ECA4100BDDD5C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		04887247241ECC6D00BDDD5C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		0488724B241ED42E00BDDD5C /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +107,8 @@
 				0488724B241ED42E00BDDD5C /* EntryViewController.swift */,
 				04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */,
 				04AD0FAB242133F600912908 /* ResultsViewController.swift */,
+				045315472423EA8E00225A79 /* EntryAlertViewController.swift */,
+				0453154B242402BE00225A79 /* EntryAlertService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -106,6 +118,7 @@
 			children = (
 				040E1CF42407274000A8AA8D /* LaunchScreen.storyboard */,
 				040E1CEF2407273D00A8AA8D /* Main.storyboard */,
+				045315452423EA0600225A79 /* EntryAlert.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -117,6 +130,8 @@
 				04AF08D1242006670013DD8B /* Calculator.swift */,
 				04AF08C9241EDE730013DD8B /* ItemCell.swift */,
 				04AF08CA241EDE730013DD8B /* ItemCell.xib */,
+				0453154F24240DB000225A79 /* BuyerCell.swift */,
+				0453155024240DB000225A79 /* BuyerCell.xib */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -144,7 +159,6 @@
 				ABBA3BE7DC9CD25696F71C26 /* Pods-Splittr.debug.xcconfig */,
 				D8FCC92156333340E6BE4067 /* Pods-Splittr.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,8 +224,10 @@
 			files = (
 				040E1CF62407274000A8AA8D /* LaunchScreen.storyboard in Resources */,
 				04887246241ECA4100BDDD5C /* Default-568h@2x.png in Resources */,
+				0453155224240DB000225A79 /* BuyerCell.xib in Resources */,
 				040E1CF32407274000A8AA8D /* Assets.xcassets in Resources */,
 				040E1CF12407273D00A8AA8D /* Main.storyboard in Resources */,
+				045315462423EA0600225A79 /* EntryAlert.storyboard in Resources */,
 				04AF08CC241EDE730013DD8B /* ItemCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,7 +288,10 @@
 				04AD0FAC242133F700912908 /* ResultsViewController.swift in Sources */,
 				04AF08D2242006670013DD8B /* Calculator.swift in Sources */,
 				04AF08C8241EDA4B0013DD8B /* Item.swift in Sources */,
+				0453154C242402BE00225A79 /* EntryAlertService.swift in Sources */,
 				04887248241ECC6D00BDDD5C /* Constants.swift in Sources */,
+				0453155124240DB000225A79 /* BuyerCell.swift in Sources */,
+				045315482423EA8F00225A79 /* EntryAlertViewController.swift in Sources */,
 				04AF08CB241EDE730013DD8B /* ItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

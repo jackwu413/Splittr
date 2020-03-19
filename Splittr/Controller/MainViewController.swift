@@ -26,7 +26,7 @@ class MainViewController: UIViewController {
             fatalError("Navigation Controller does not exist")
         }
         navBar.shadowImage = UIImage()
-        navBar.barTintColor = #colorLiteral(red: 0.6058222063, green: 0.9052559622, blue: 0.7542593185, alpha: 1)
+        navBar.barTintColor = #colorLiteral(red: 0.6432265639, green: 0.9184823632, blue: 0.7707243562, alpha: 1)
         scanButton.layer.cornerRadius = 7
         enterButton.layer.cornerRadius = 7
     }

@@ -12,7 +12,12 @@ class EntryViewController: UIViewController {
     
     //Commonly Used Items
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneButton: UIButton!
+    
     var items: [Item] = []
+    
+    //Alert Service
+    let entryAlertService = EntryAlertService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,40 +25,43 @@ class EntryViewController: UIViewController {
         tableView.dataSource = self
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        doneButton.layer.cornerRadius = 7
+    }
     
     @IBAction func addPressed(_ sender: UIButton) {
-        var nameTextField = UITextField()
-        var priceTextField = UITextField()
-        var buyersTextField = UITextField()
-        
-        let alert = UIAlertController(title: "Add Item", message: "Comma separate if >1 buyer", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Add", style: .default) { (action) in
-            let newItem = Item(
-                name: nameTextField.text!,
-//                price: Float(priceTextField.text!),
-                price: (priceTextField.text! as NSString).floatValue,
-                buyers: self.getBuyers(from: buyersTextField.text!)
-            )
-            self.items.append(newItem)
-            self.tableView.reloadData()
-        }
-        
-        alert.addTextField { (field) in
-            field.placeholder = "Item Name"
-            nameTextField = field
-        }
-        alert.addTextField { (field) in
-            field.placeholder = "Price"
-            priceTextField = field
-        }
-        alert.addTextField { (field) in
-            field.placeholder = "Buyer(s)"
-            buyersTextField = field
-        }
-        
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
+        let alertVC = entryAlertService.alert()
+        present(alertVC, animated: true)
+//        var nameTextField = UITextField()
+//        var priceTextField = UITextField()
+//        var buyersTextField = UITextField()
+//
+//        let alert = UIAlertController(title: "Add Item", message: "Comma separate if >1 buyer", preferredStyle: .alert)
+//        let action = UIAlertAction(title: "Add", style: .default) { (action) in
+//            let newItem = Item(
+//                name: nameTextField.text!,
+//                price: (priceTextField.text! as NSString).floatValue,
+//                buyers: self.getBuyers(from: buyersTextField.text!)
+//            )
+//            self.items.append(newItem)
+//            self.tableView.reloadData()
+//        }
+//
+//        alert.addTextField { (field) in
+//            field.placeholder = "Item Name"
+//            nameTextField = field
+//        }
+//        alert.addTextField { (field) in
+//            field.placeholder = "Price"
+//            priceTextField = field
+//        }
+//        alert.addTextField { (field) in
+//            field.placeholder = "Buyer(s)"
+//            buyersTextField = field
+//        }
+//
+//        alert.addAction(action)
+//        present(alert, animated: true, completion: nil)
     }
     
     func getBuyers(from buyers: String) -> [String]{
