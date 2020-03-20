@@ -99,7 +99,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="264" placeholderIntrinsicHeight="42" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-Xh-6Fj" userLabel="TABLE" customClass="SelfSizedTableView" customModule="Splittr" customModuleProvider="target">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="264" placeholderIntrinsicHeight="42" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="42" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-Xh-6Fj" userLabel="TABLE" customClass="SelfSizedTableView" customModule="Splittr" customModuleProvider="target">
                                         <rect key="frame" x="8" y="120" width="264" height="42"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -130,10 +130,51 @@
                                     <constraint firstItem="muB-Ua-aHL" firstAttribute="top" secondItem="NDK-RD-7ff" secondAttribute="bottom" constant="8" id="xTb-Ge-77A"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5k-WJ-1Ov" userLabel="Warning View">
+                                <rect key="frame" x="114.5" y="576" width="185" height="28"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="w1m-we-ko4">
+                                        <rect key="frame" x="8" y="0.0" width="169" height="28"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exclamationmark.triangle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NLD-96-K03" userLabel="Warning Icon">
+                                                <rect key="frame" x="0.0" y="5" width="20" height="18"/>
+                                                <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="DLe-3t-key"/>
+                                                    <constraint firstAttribute="height" constant="20" id="GFd-Ld-vnD"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please fill in all fields." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MB6-kI-kyt">
+                                                <rect key="frame" x="33" y="4" width="136" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="ITq-rf-usD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="cEc-N4-Lbl"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="2Hz-KN-x3a"/>
+                                    <constraint firstAttribute="width" constant="185" id="8rD-Oa-Zd5"/>
+                                    <constraint firstAttribute="bottom" secondItem="w1m-we-ko4" secondAttribute="bottom" id="Age-0Z-E3F"/>
+                                    <constraint firstItem="w1m-we-ko4" firstAttribute="top" secondItem="D5k-WJ-1Ov" secondAttribute="top" id="BL0-75-g6s"/>
+                                    <constraint firstAttribute="trailing" secondItem="w1m-we-ko4" secondAttribute="trailing" constant="8" id="JDV-4A-wyu"/>
+                                    <constraint firstItem="w1m-we-ko4" firstAttribute="leading" secondItem="D5k-WJ-1Ov" secondAttribute="leading" constant="8" id="Q4V-PJ-OTB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.35496040239726029" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="29F-1D-cMe" firstAttribute="centerX" secondItem="maQ-ln-m9q" secondAttribute="centerX" id="443-Nk-8eE"/>
+                            <constraint firstItem="D5k-WJ-1Ov" firstAttribute="top" secondItem="29F-1D-cMe" secondAttribute="bottom" constant="4" id="AUd-v9-FrH"/>
+                            <constraint firstItem="D5k-WJ-1Ov" firstAttribute="centerX" secondItem="maQ-ln-m9q" secondAttribute="centerX" id="ExE-oT-oUX"/>
                             <constraint firstItem="29F-1D-cMe" firstAttribute="centerY" secondItem="maQ-ln-m9q" secondAttribute="centerY" id="R02-ba-ZSG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4yX-v3-Gfs"/>
@@ -147,6 +188,7 @@
                         <outlet property="splitItemButton" destination="ZSO-Nw-cw3" id="wNl-WN-sRh"/>
                         <outlet property="tableView" destination="mH3-Xh-6Fj" id="i8J-GT-jff"/>
                         <outlet property="titleView" destination="OCd-lG-QmR" id="Fwq-0G-oj2"/>
+                        <outlet property="warningView" destination="D5k-WJ-1Ov" id="nX2-5s-zLS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6cq-W8-lhw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -154,4 +196,7 @@
             <point key="canvasLocation" x="166.66666666666669" y="75.669642857142847"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exclamationmark.triangle" catalog="system" width="64" height="56"/>
+    </resources>
 </document>

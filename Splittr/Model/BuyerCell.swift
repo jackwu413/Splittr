@@ -8,23 +8,54 @@
 
 import UIKit
 
+protocol DeleteButtonDelegate {
+//    func deletePressed(index: Int)
+    func deletePressed(indexPath: IndexPath)
+}
+
+protocol BuyersDelegate {
+    func addPotentialBuyer(position: Int, name: String)
+}
+
 class BuyerCell: UITableViewCell {
 
     @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var nameField: UITextField!
+    
+    var deleteButtonDelegate: DeleteButtonDelegate!
+    var buyersDelegate: BuyersDelegate!
+    var indexPath: IndexPath!
+    var buyerName: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.nameField.delegate = self
     }
-    
+
     @IBAction func deletePressed(_ sender: UIButton) {
-        //print the indexPath.row that this was pressed for
+        self.deleteButtonDelegate?.deletePressed(indexPath: indexPath)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+}
+
+extension BuyerCell: UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //print("textField \(index!) DidBeginEditing")
+//        buyerName = nameField.text
+//        self.buyersDelegate.addPotentialBuyer(position: index, name: buyerName)
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //print("textField \(index!) DidEndEditing")
+        buyerName = nameField.text
+        self.buyersDelegate.addPotentialBuyer(position: indexPath.row, name: buyerName)
     }
     
 }

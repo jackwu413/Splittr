@@ -49,6 +49,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="deleteButton" destination="haF-77-c2N" id="AMR-iP-L7I"/>
+                <outlet property="nameField" destination="QtS-da-RCR" id="uRp-8J-hWT"/>
             </connections>
             <point key="canvasLocation" x="83" y="137"/>
         </tableViewCell>

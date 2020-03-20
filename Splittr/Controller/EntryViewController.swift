@@ -8,7 +8,11 @@
 
 import UIKit
 
-class EntryViewController: UIViewController {
+protocol AlertDelegate {
+    func insertItem(item: Item)
+}
+
+class EntryViewController: UIViewController, AlertDelegate {
     
     //Commonly Used Items
     @IBOutlet weak var tableView: UITableView!
@@ -31,7 +35,14 @@ class EntryViewController: UIViewController {
     
     @IBAction func addPressed(_ sender: UIButton) {
         let alertVC = entryAlertService.alert()
+        alertVC.alertDelegate = self
         present(alertVC, animated: true)
+//        present(alertVC, animated: true) {
+//            self.items.append(alertVC.item!)
+//            self.tableView.reloadData()
+//        }
+//        self.items.append(alertVC.item!)
+//        self.tableView.reloadData()
 //        var nameTextField = UITextField()
 //        var priceTextField = UITextField()
 //        var buyersTextField = UITextField()
@@ -62,6 +73,11 @@ class EntryViewController: UIViewController {
 //
 //        alert.addAction(action)
 //        present(alert, animated: true, completion: nil)
+    }
+    
+    func insertItem(item: Item) {
+        self.items.append(item)
+        self.tableView.reloadData()
     }
     
     func getBuyers(from buyers: String) -> [String]{
