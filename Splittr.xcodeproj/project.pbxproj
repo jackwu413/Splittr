@@ -12,6 +12,7 @@
 		040E1CF12407273D00A8AA8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CEF2407273D00A8AA8D /* Main.storyboard */; };
 		040E1CF32407274000A8AA8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CF22407274000A8AA8D /* Assets.xcassets */; };
 		040E1CF62407274000A8AA8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 040E1CF42407274000A8AA8D /* LaunchScreen.storyboard */; };
+		044D499C24244FBC00C60C7F /* SelfSizedTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044D499B24244FBC00C60C7F /* SelfSizedTableView.swift */; };
 		045315462423EA0600225A79 /* EntryAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045315452423EA0600225A79 /* EntryAlert.storyboard */; };
 		045315482423EA8F00225A79 /* EntryAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045315472423EA8E00225A79 /* EntryAlertViewController.swift */; };
 		0453154C242402BE00225A79 /* EntryAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453154B242402BE00225A79 /* EntryAlertService.swift */; };
@@ -36,6 +37,7 @@
 		040E1CF22407274000A8AA8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		040E1CF52407274000A8AA8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		040E1CF72407274000A8AA8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		044D499B24244FBC00C60C7F /* SelfSizedTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSizedTableView.swift; sourceTree = "<group>"; };
 		045315452423EA0600225A79 /* EntryAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EntryAlert.storyboard; sourceTree = "<group>"; };
 		045315472423EA8E00225A79 /* EntryAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAlertViewController.swift; sourceTree = "<group>"; };
 		0453154B242402BE00225A79 /* EntryAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAlertService.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				045315472423EA8E00225A79 /* EntryAlertViewController.swift */,
 				04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */,
 				04AD0FAB242133F600912908 /* ResultsViewController.swift */,
+				044D499B24244FBC00C60C7F /* SelfSizedTableView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				0453155124240DB000225A79 /* BuyerCell.swift in Sources */,
 				045315482423EA8F00225A79 /* EntryAlertViewController.swift in Sources */,
 				04AF08CB241EDE730013DD8B /* ItemCell.swift in Sources */,
+				044D499C24244FBC00C60C7F /* SelfSizedTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

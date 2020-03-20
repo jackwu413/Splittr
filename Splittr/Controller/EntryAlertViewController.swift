@@ -32,7 +32,6 @@ class EntryAlertViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BuyerCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         tableView.separatorStyle = .none
-        //tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
