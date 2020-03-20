@@ -21,7 +21,6 @@ class EntryAlertViewController: UIViewController {
     @IBOutlet weak var splitItemButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var addItemButton: UIButton!
-    @IBOutlet weak var buyerTable: UITableView!
     
     //Used Objects/Variables
     var potentialBuyers: [String] = []
@@ -32,9 +31,15 @@ class EntryAlertViewController: UIViewController {
         potentialBuyers.append("Mandatory First Buyer")
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BuyerCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        tableView.separatorStyle = .none
+        //tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setCornerRadius()
+    }
+    
+    func setCornerRadius() {
         mainView.layer.cornerRadius = 5
         titleView.layer.cornerRadius = 5
         splitItemButton.layer.cornerRadius = 5
@@ -43,6 +48,9 @@ class EntryAlertViewController: UIViewController {
     }
     
     @IBAction func splitItemPressed(_ sender: UIButton) {
+        print("Split Item Pressed")
+        potentialBuyers.append("")
+        tableView.reloadData()
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {
@@ -57,10 +65,12 @@ class EntryAlertViewController: UIViewController {
 
 extension EntryAlertViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("num rows: \(potentialBuyers.count)")
         return potentialBuyers.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("generating cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! BuyerCell
         if potentialBuyers.count == 1 {
             cell.deleteButton.isHidden = true

@@ -11,11 +11,16 @@ import UIKit
 class BuyerCell: UITableViewCell {
 
     @IBOutlet weak var deleteButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    @IBAction func deletePressed(_ sender: UIButton) {
+        //print the indexPath.row that this was pressed for
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

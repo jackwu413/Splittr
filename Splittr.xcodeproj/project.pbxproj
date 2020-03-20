@@ -25,7 +25,6 @@
 		04AF08CB241EDE730013DD8B /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF08C9241EDE730013DD8B /* ItemCell.swift */; };
 		04AF08CC241EDE730013DD8B /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04AF08CA241EDE730013DD8B /* ItemCell.xib */; };
 		04AF08D02420055F0013DD8B /* AdjustmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */; };
-		04AF08D2242006670013DD8B /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AF08D1242006670013DD8B /* Calculator.swift */; };
 		8EE818488EDB6C2F2F20A473 /* Pods_Splittr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5973783055661B6DD38EEB15 /* Pods_Splittr.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		04AF08C9241EDE730013DD8B /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		04AF08CA241EDE730013DD8B /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdjustmentsViewController.swift; sourceTree = "<group>"; };
-		04AF08D1242006670013DD8B /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		5973783055661B6DD38EEB15 /* Pods_Splittr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Splittr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABBA3BE7DC9CD25696F71C26 /* Pods-Splittr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splittr.debug.xcconfig"; path = "Target Support Files/Pods-Splittr/Pods-Splittr.debug.xcconfig"; sourceTree = "<group>"; };
 		D8FCC92156333340E6BE4067 /* Pods-Splittr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Splittr.release.xcconfig"; path = "Target Support Files/Pods-Splittr/Pods-Splittr.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,10 +92,19 @@
 				04887243241EC6A800BDDD5C /* Model */,
 				04887242241EC6A600BDDD5C /* View */,
 				04887241241EC6A300BDDD5C /* Controller */,
+				0453155524242C0F00225A79 /* Services */,
 				04887244241EC6E600BDDD5C /* Supporting Files */,
 				04887247241ECC6D00BDDD5C /* Constants.swift */,
 			);
 			path = Splittr;
+			sourceTree = "<group>";
+		};
+		0453155524242C0F00225A79 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0453154B242402BE00225A79 /* EntryAlertService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		04887241241EC6A300BDDD5C /* Controller */ = {
@@ -105,10 +112,9 @@
 			children = (
 				040E1CED2407273D00A8AA8D /* MainViewController.swift */,
 				0488724B241ED42E00BDDD5C /* EntryViewController.swift */,
+				045315472423EA8E00225A79 /* EntryAlertViewController.swift */,
 				04AF08CF2420055F0013DD8B /* AdjustmentsViewController.swift */,
 				04AD0FAB242133F600912908 /* ResultsViewController.swift */,
-				045315472423EA8E00225A79 /* EntryAlertViewController.swift */,
-				0453154B242402BE00225A79 /* EntryAlertService.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -127,7 +133,6 @@
 			isa = PBXGroup;
 			children = (
 				04AF08C7241EDA4B0013DD8B /* Item.swift */,
-				04AF08D1242006670013DD8B /* Calculator.swift */,
 				04AF08C9241EDE730013DD8B /* ItemCell.swift */,
 				04AF08CA241EDE730013DD8B /* ItemCell.xib */,
 				0453154F24240DB000225A79 /* BuyerCell.swift */,
@@ -286,7 +291,6 @@
 				040E1CEA2407273D00A8AA8D /* AppDelegate.swift in Sources */,
 				04AF08D02420055F0013DD8B /* AdjustmentsViewController.swift in Sources */,
 				04AD0FAC242133F700912908 /* ResultsViewController.swift in Sources */,
-				04AF08D2242006670013DD8B /* Calculator.swift in Sources */,
 				04AF08C8241EDA4B0013DD8B /* Item.swift in Sources */,
 				0453154C242402BE00225A79 /* EntryAlertService.swift in Sources */,
 				04887248241ECC6D00BDDD5C /* Constants.swift in Sources */,
