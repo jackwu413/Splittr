@@ -17,15 +17,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yG3-ZG-k3V">
-                        <rect key="frame" x="0.0" y="4" width="333" height="39"/>
+                        <rect key="frame" x="0.0" y="4" width="339" height="39"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buyer's Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QtS-da-RCR" userLabel="Buyer Name">
-                                <rect key="frame" x="0.0" y="2.5" width="295" height="34"/>
+                                <rect key="frame" x="0.0" y="2.5" width="301" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haF-77-c2N" userLabel="Delete Button">
-                                <rect key="frame" x="303" y="5.5" width="30" height="27.5"/>
+                                <rect key="frame" x="309" y="5.5" width="30" height="27.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="LfO-iP-Ut4"/>
                                     <constraint firstAttribute="height" constant="30" id="xp0-Yu-MXN"/>
@@ -43,7 +43,7 @@
                     <constraint firstItem="yG3-ZG-k3V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="YXk-CN-ZK7"/>
                     <constraint firstAttribute="bottom" secondItem="yG3-ZG-k3V" secondAttribute="bottom" constant="4" id="mLV-uF-Z1l"/>
                     <constraint firstItem="yG3-ZG-k3V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pjq-6x-if5"/>
-                    <constraint firstAttribute="trailing" secondItem="yG3-ZG-k3V" secondAttribute="trailing" constant="6" id="zJs-5f-pqh"/>
+                    <constraint firstAttribute="trailing" secondItem="yG3-ZG-k3V" secondAttribute="trailing" id="zJs-5f-pqh"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
