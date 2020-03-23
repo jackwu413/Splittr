@@ -15,7 +15,8 @@ class AdjustmentsViewController: UIViewController {
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var taxSlider: UISlider!
     @IBOutlet weak var tipSlider: UISlider!
-
+    @IBOutlet weak var splitButton: UIButton!
+    
     //MARK: - Commonly Used Vars
     var itemTotal: Float = 0.0
     var tax: Float = 0.07
@@ -27,6 +28,7 @@ class AdjustmentsViewController: UIViewController {
         super.viewDidLoad()
         itemTotal = getItemTotal(items: items!)
         setTotalLabel()
+        splitButton.layer.cornerRadius = 7.0
     }
     
     
@@ -78,7 +80,7 @@ class AdjustmentsViewController: UIViewController {
     }
     
     func setTotalLabel() {
-        totalLabel.text = String(format: "%.2f", (itemTotal*tax)+(((itemTotal*tax)+itemTotal)*tip)+itemTotal)
+        totalLabel.text = "Bill Total: $\(String(format: "%.2f", (itemTotal*tax)+(((itemTotal*tax)+itemTotal)*tip)+itemTotal))"
     }
     
     func getItemTotal(items: [Item]) -> Float {

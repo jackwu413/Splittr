@@ -194,102 +194,113 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-xc-zKv">
-                                <rect key="frame" x="4" y="181" width="406" height="446.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-xc-zKv" userLabel="Main Stack">
+                                <rect key="frame" x="32" y="0.0" width="350" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SkN-hc-AGq">
-                                        <rect key="frame" x="118" y="0.0" width="170" height="49.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Total: $0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-Xg-ban">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="491"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="39"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-pj-Nd8" userLabel="Tax Stack">
+                                        <rect key="frame" x="0.0" y="511" width="350" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5go-Z1-mgb">
-                                                <rect key="frame" x="0.0" y="0.0" width="91.5" height="49.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kM8-Xg-ban">
-                                                <rect key="frame" x="116.5" y="0.0" width="53.5" height="49.5"/>
-                                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="36"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="240" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-pj-Nd8">
-                                        <rect key="frame" x="58" y="123.5" width="290" height="20.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqV-WD-voj">
-                                                <rect key="frame" x="0.0" y="0.0" width="26.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqV-WD-voj">
+                                                <rect key="frame" x="0.0" y="0.0" width="326.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CN5-ga-n01">
-                                                <rect key="frame" x="266.5" y="0.0" width="23.5" height="20.5"/>
+                                                <rect key="frame" x="326.5" y="0.0" width="23.5" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="uqV-WD-voj" firstAttribute="leading" secondItem="Pwe-pj-Nd8" secondAttribute="leading" id="3ge-DB-pSO"/>
+                                            <constraint firstAttribute="height" constant="21" identifier="Tax Stack Height" id="i6f-PD-vA1"/>
+                                        </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.0" maxValue="14" translatesAutoresizingMaskIntoConstraints="NO" id="b8Z-4C-rKA">
-                                        <rect key="frame" x="18" y="218" width="370" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.0" maxValue="14" translatesAutoresizingMaskIntoConstraints="NO" id="b8Z-4C-rKA">
+                                        <rect key="frame" x="-2" y="552" width="354" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" identifier="Tax Slider Height" id="UkW-4o-gEA"/>
+                                        </constraints>
+                                        <color key="minimumTrackTintColor" red="1" green="0.65806364449999999" blue="0.66739039769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="taxSliderChanged:" destination="0ko-vg-CyL" eventType="valueChanged" id="RJa-8u-h8C"/>
                                         </connections>
                                     </slider>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="233" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-Ix-CZ1">
-                                        <rect key="frame" x="58.5" y="322" width="289.5" height="20.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-Ix-CZ1" userLabel="Tip Stack">
+                                        <rect key="frame" x="0.0" y="617" width="350" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-aO-s90">
-                                                <rect key="frame" x="0.0" y="0.0" width="24.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-aO-s90">
+                                                <rect key="frame" x="0.0" y="0.0" width="318" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySq-6B-mDc">
-                                                <rect key="frame" x="257.5" y="0.0" width="32" height="20.5"/>
+                                                <rect key="frame" x="318" y="0.0" width="32" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" identifier="Tip Stack Height" id="Bk2-hT-Fer"/>
+                                        </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="tyN-lb-aMg">
-                                        <rect key="frame" x="18" y="416.5" width="370" height="31"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="tyN-lb-aMg">
+                                        <rect key="frame" x="-2" y="658" width="354" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" identifier="Tip Slider Height" id="OxT-Io-PDm"/>
+                                        </constraints>
+                                        <color key="minimumTrackTintColor" red="1" green="0.65806364449999999" blue="0.66739039769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="tipSliderChanged:" destination="0ko-vg-CyL" eventType="valueChanged" id="MKI-HX-lGU"/>
                                         </connections>
                                     </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYo-uO-CbU">
+                                        <rect key="frame" x="0.0" y="723" width="350" height="51"/>
+                                        <color key="backgroundColor" red="1" green="0.65806364449999999" blue="0.66739039769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" identifier="Split Button Height" id="arp-gk-zee"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="Split Bill">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="splitPressed:" destination="0ko-vg-CyL" eventType="touchUpInside" id="rZH-25-nVz"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="b8Z-4C-rKA" firstAttribute="leading" secondItem="Hhc-xc-zKv" secondAttribute="leading" constant="20" symbolic="YES" id="CMF-IL-605"/>
-                                    <constraint firstItem="tyN-lb-aMg" firstAttribute="leading" secondItem="Hhc-xc-zKv" secondAttribute="leading" constant="20" symbolic="YES" id="XVa-tR-dqc"/>
-                                    <constraint firstAttribute="trailing" secondItem="tyN-lb-aMg" secondAttribute="trailing" constant="20" symbolic="YES" id="fn7-N3-bD7"/>
-                                    <constraint firstAttribute="trailing" secondItem="b8Z-4C-rKA" secondAttribute="trailing" constant="20" symbolic="YES" id="mGU-u7-IEv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pwe-pj-Nd8" secondAttribute="trailing" id="Ecj-3C-BlQ"/>
+                                    <constraint firstItem="Pwe-pj-Nd8" firstAttribute="leading" secondItem="Hhc-xc-zKv" secondAttribute="leading" id="lga-Us-TH4"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYo-uO-CbU">
-                                <rect key="frame" x="236" y="699" width="114" height="9"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
-                                <state key="normal" title="Split Bill"/>
-                                <connections>
-                                    <action selector="splitPressed:" destination="0ko-vg-CyL" eventType="touchUpInside" id="rZH-25-nVz"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.64322656389999999" green="0.91848236319999998" blue="0.77072435620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Hhc-xc-zKv" firstAttribute="centerX" secondItem="zcm-mx-nYH" secondAttribute="centerX" id="AA8-Om-Rp5"/>
-                            <constraint firstItem="FwV-9E-xpY" firstAttribute="trailing" secondItem="lYo-uO-CbU" secondAttribute="trailing" constant="64" id="P4E-lA-OpQ"/>
-                            <constraint firstItem="Hhc-xc-zKv" firstAttribute="centerY" secondItem="zcm-mx-nYH" secondAttribute="centerY" id="RSe-mY-3dh"/>
-                            <constraint firstItem="FwV-9E-xpY" firstAttribute="bottom" secondItem="lYo-uO-CbU" secondAttribute="bottom" constant="66" id="RXl-Du-nWp"/>
-                            <constraint firstItem="lYo-uO-CbU" firstAttribute="leading" secondItem="FwV-9E-xpY" secondAttribute="leading" constant="236" id="YTJ-4D-r7v"/>
-                            <constraint firstItem="lYo-uO-CbU" firstAttribute="top" secondItem="Hhc-xc-zKv" secondAttribute="bottom" constant="71.5" id="fvw-Fe-FeU"/>
+                            <constraint firstItem="Hhc-xc-zKv" firstAttribute="top" secondItem="FwV-9E-xpY" secondAttribute="top" identifier="Main Stack Top" id="4t0-Xd-Bik"/>
+                            <constraint firstAttribute="trailing" secondItem="Hhc-xc-zKv" secondAttribute="trailing" constant="32" identifier="Main Stack Trailing" id="cRX-jH-UZX"/>
+                            <constraint firstItem="Hhc-xc-zKv" firstAttribute="leading" secondItem="zcm-mx-nYH" secondAttribute="leading" constant="32" identifier="Main Stack Leading" id="goU-TA-LU4"/>
+                            <constraint firstItem="FwV-9E-xpY" firstAttribute="bottom" secondItem="Hhc-xc-zKv" secondAttribute="bottom" identifier="Main Stack Bottom" id="llg-ov-ERe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FwV-9E-xpY"/>
                     </view>
                     <navigationItem key="navigationItem" id="IS1-vs-DCs"/>
                     <connections>
+                        <outlet property="splitButton" destination="lYo-uO-CbU" id="T8e-W2-ZXo"/>
                         <outlet property="taxLabel" destination="CN5-ga-n01" id="ZFD-i8-d9P"/>
                         <outlet property="taxSlider" destination="b8Z-4C-rKA" id="I7a-Np-Rbz"/>
                         <outlet property="tipLabel" destination="ySq-6B-mDc" id="C04-1C-iaF"/>
