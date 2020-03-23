@@ -27,6 +27,8 @@ class EntryViewController: UIViewController, AlertDelegate {
         super.viewDidLoad()
         tableView.separatorStyle = .none
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "ItemHeaderView", bundle: nil), forHeaderFooterViewReuseIdentifier: "HeaderView")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,45 +39,10 @@ class EntryViewController: UIViewController, AlertDelegate {
         let alertVC = entryAlertService.alert()
         alertVC.alertDelegate = self
         present(alertVC, animated: true)
-//        present(alertVC, animated: true) {
-//            self.items.append(alertVC.item!)
-//            self.tableView.reloadData()
-//        }
-//        self.items.append(alertVC.item!)
-//        self.tableView.reloadData()
-//        var nameTextField = UITextField()
-//        var priceTextField = UITextField()
-//        var buyersTextField = UITextField()
-//
-//        let alert = UIAlertController(title: "Add Item", message: "Comma separate if >1 buyer", preferredStyle: .alert)
-//        let action = UIAlertAction(title: "Add", style: .default) { (action) in
-//            let newItem = Item(
-//                name: nameTextField.text!,
-//                price: (priceTextField.text! as NSString).floatValue,
-//                buyers: self.getBuyers(from: buyersTextField.text!)
-//            )
-//            self.items.append(newItem)
-//            self.tableView.reloadData()
-//        }
-//
-//        alert.addTextField { (field) in
-//            field.placeholder = "Item Name"
-//            nameTextField = field
-//        }
-//        alert.addTextField { (field) in
-//            field.placeholder = "Price"
-//            priceTextField = field
-//        }
-//        alert.addTextField { (field) in
-//            field.placeholder = "Buyer(s)"
-//            buyersTextField = field
-//        }
-//
-//        alert.addAction(action)
-//        present(alert, animated: true, completion: nil)
     }
     
     func insertItem(item: Item) {
+        print("inserting new item")
         self.items.append(item)
         self.tableView.reloadData()
     }
@@ -99,14 +66,22 @@ class EntryViewController: UIViewController, AlertDelegate {
     
 }
 
-extension EntryViewController: UITableViewDataSource {
+extension EntryViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "\(items[section].name) - $\(items[section].price)"
-    }
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "\(items[section].name) - $\(items[section].price)"
+//    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        print("header creation function entered")
+        let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! ItemHeaderView
+        headerView.nameLabel.text = items[section].name
+        headerView.priceLabel.text = String(format: "%.2f", items[section].price)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

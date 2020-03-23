@@ -35,7 +35,6 @@ class EntryAlertViewController: UIViewController {
         potentialBuyers.append("")
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BuyerCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
-        tableView.separatorStyle = .none
         print(potentialBuyers)
     }
     
@@ -93,8 +92,6 @@ class EntryAlertViewController: UIViewController {
             delegate.insertItem(item: newItem)
         }
         dismiss(animated: true)
-
-        
     }
     
     func verifyFields() -> Bool {

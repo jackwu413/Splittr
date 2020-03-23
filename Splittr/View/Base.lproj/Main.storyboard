@@ -89,7 +89,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dyU-EU-8m0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -108,17 +108,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-0V-qLB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="24" estimatedRowHeight="-1" sectionHeaderHeight="48" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-0V-qLB">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
                                 <color key="backgroundColor" red="0.64322656389999999" green="0.91848236319999998" blue="0.77072435620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Item Cell" id="szW-CQ-Yc1" userLabel="Item Cell">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="24"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="szW-CQ-Yc1" id="HxJ-0w-nwn">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.64322656389999999" green="0.91848236319999998" blue="0.77072435620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -140,7 +141,7 @@
                                             <segue destination="0ko-vg-CyL" kind="show" identifier="goToAdjustments" id="q1Y-O5-9TQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PY-cv-d6u">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2PY-cv-d6u" userLabel="Add Button">
                                         <rect key="frame" x="162" y="5.5" width="50" height="49"/>
                                         <color key="tintColor" red="1" green="0.65806364449999999" blue="0.66739039769999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" backgroundImage="plus.circle" catalog="system">
@@ -194,10 +195,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="74" translatesAutoresizingMaskIntoConstraints="NO" id="Hhc-xc-zKv">
-                                <rect key="frame" x="10" y="181" width="394" height="446.5"/>
+                                <rect key="frame" x="4" y="181" width="406" height="446.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="SkN-hc-AGq">
-                                        <rect key="frame" x="112" y="0.0" width="170" height="49.5"/>
+                                        <rect key="frame" x="118" y="0.0" width="170" height="49.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5go-Z1-mgb">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.5" height="49.5"/>
@@ -214,7 +215,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="240" translatesAutoresizingMaskIntoConstraints="NO" id="Pwe-pj-Nd8">
-                                        <rect key="frame" x="52" y="123.5" width="290" height="20.5"/>
+                                        <rect key="frame" x="58" y="123.5" width="290" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tax" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uqV-WD-voj">
                                                 <rect key="frame" x="0.0" y="0.0" width="26.5" height="20.5"/>
@@ -231,13 +232,13 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.0" maxValue="14" translatesAutoresizingMaskIntoConstraints="NO" id="b8Z-4C-rKA">
-                                        <rect key="frame" x="18" y="218" width="358" height="31"/>
+                                        <rect key="frame" x="18" y="218" width="370" height="31"/>
                                         <connections>
                                             <action selector="taxSliderChanged:" destination="0ko-vg-CyL" eventType="valueChanged" id="RJa-8u-h8C"/>
                                         </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="233" translatesAutoresizingMaskIntoConstraints="NO" id="DfA-Ix-CZ1">
-                                        <rect key="frame" x="52.5" y="322" width="289.5" height="20.5"/>
+                                        <rect key="frame" x="58.5" y="322" width="289.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jYF-aO-s90">
                                                 <rect key="frame" x="0.0" y="0.0" width="24.5" height="20.5"/>
@@ -254,7 +255,7 @@
                                         </subviews>
                                     </stackView>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="tyN-lb-aMg">
-                                        <rect key="frame" x="18" y="416.5" width="358" height="31"/>
+                                        <rect key="frame" x="18" y="416.5" width="370" height="31"/>
                                         <connections>
                                             <action selector="tipSliderChanged:" destination="0ko-vg-CyL" eventType="valueChanged" id="MKI-HX-lGU"/>
                                         </connections>
