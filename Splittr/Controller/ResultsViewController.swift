@@ -16,6 +16,7 @@ class ResultsViewController: UIViewController {
     var payments: [String: Float]?
     var items: [Item]?
     var keys: [String] = []
+    var itemList: [String:[String]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +25,24 @@ class ResultsViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Result Cell")
         keys = Array(payments!.keys)
+        getItemList()
         tableView.reloadData()
+    }
+    
+    func getItemList() {
+        itemList = [:]
+        for buyer in keys {
+            for item in items! {
+                if item.buyers.contains(buyer) {
+                    if itemList![buyer] == nil {
+                        itemList![buyer] = [item.name]
+                    } else {
+                        itemList![buyer]?.append(item.name)
+                    }
+                }
+            }
+        }
+        print(itemList)
     }
     
     @IBAction func donePressed(_ sender: UIButton) {
@@ -42,18 +60,28 @@ class ResultsViewController: UIViewController {
 }
 
 extension ResultsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Result Cell", for: indexPath)
-        let person = keys[indexPath.row]
-        let amount = String(format: "%.2f", payments![person]!)
-        cell.textLabel?.text = "\(person): $\(amount)"
-        return cell
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return payments!.count
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let person = keys[section]
+        let amount = String(format: "%.2f", payments![person]!)
+        return "\(person): $\(amount)"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        print("Rows: \(payments!.count)")
-        return payments!.count
+//        print("Rows: \(payments!.count)")
+//        return payments!.count
+        let person = keys[section]
+        return itemList![person]!.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Result Cell", for: indexPath)
+        let person = keys[indexPath.section ]
+        let item = itemList![person]![indexPath.row]
+        cell.textLabel?.text = item
+        return cell
     }
 }

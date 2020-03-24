@@ -53,7 +53,7 @@ class AdjustmentsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultsViewController
-            print("payments size on adjustments page: \(payments.count)")
+            //print("payments size on adjustments page: \(payments.count)")
             destinationVC.payments = payments
             destinationVC.items = items
         }

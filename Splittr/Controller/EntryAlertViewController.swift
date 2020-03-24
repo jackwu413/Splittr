@@ -35,7 +35,6 @@ class EntryAlertViewController: UIViewController {
         potentialBuyers.append("")
         tableView.dataSource = self
         tableView.register(UINib(nibName: "BuyerCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
-        print(potentialBuyers)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +55,6 @@ class EntryAlertViewController: UIViewController {
         //print("Split Item Pressed")
         potentialBuyers.append("")
         tableView.reloadData()
-        print(potentialBuyers)
     }
     
     @IBAction func cancelPressed(_ sender: UIButton) {

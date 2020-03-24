@@ -77,7 +77,6 @@ extension EntryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        print("header creation function entered")
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as! ItemHeaderView
         headerView.nameLabel.text = items[section].name
         headerView.priceLabel.text = String(format: "%.2f", items[section].price)
