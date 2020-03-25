@@ -139,9 +139,7 @@ extension EntryAlertViewController: UITableViewDataSource, DeleteButtonDelegate,
     
     
     func deletePressed(indexPath: IndexPath) {
-        //print("Deleting \(potentialBuyers[index])")
         potentialBuyers.remove(at: indexPath.row)
-        //tableView.deleteRows(at: [indexPath], with: .automatic)
         tableView.reloadData()
         print(potentialBuyers)
     }

@@ -46,16 +46,8 @@ class BuyerCell: UITableViewCell {
 
 extension BuyerCell: UITextFieldDelegate {
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        //print("textField \(index!) DidBeginEditing")
-//        buyerName = nameField.text
-//        self.buyersDelegate.addPotentialBuyer(position: index, name: buyerName)
-    }
-    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //print("textField \(index!) DidEndEditing")
-        buyerName = nameField.text
-        self.buyersDelegate.addPotentialBuyer(position: indexPath.row, name: buyerName)
+        self.buyersDelegate.addPotentialBuyer(position: indexPath.row, name: nameField.text!)
     }
     
 }
