@@ -23,6 +23,7 @@ class AdjustmentsViewController: UIViewController {
     var tip: Float = 0.15
     var items: [Item]?
     var payments: [String:Float] = [:]
+    var buyers: [Buyer] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,6 @@ class AdjustmentsViewController: UIViewController {
         setTotalLabel()
         splitButton.layer.cornerRadius = 7.0
     }
-    
     
     @IBAction func taxSliderChanged(_ sender: UISlider) {
         taxLabel.text = "\(String(format: "%.0f", sender.value))%"
@@ -44,18 +44,18 @@ class AdjustmentsViewController: UIViewController {
         setTotalLabel()
     }
     
-    
     @IBAction func splitPressed(_ sender: UIButton) {
-        calculatePayments()
+        //calculatePayments()
+        itemsToBuyers()
         performSegue(withIdentifier: "goToResults", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultsViewController
-            //print("payments size on adjustments page: \(payments.count)")
-            destinationVC.payments = payments
-            destinationVC.items = items
+            destinationVC.buyers = buyers
+//            destinationVC.payments = payments
+//            destinationVC.items = items
         }
     }
     
@@ -77,6 +77,28 @@ class AdjustmentsViewController: UIViewController {
             payments[name] = Float(String(format: "%.2f", payments[name]!))
         }
         print(payments)
+    }
+    
+    func itemsToBuyers() {
+        buyers = []
+        for item in items! {
+            for buyer in item.buyers {
+                let result = buyers.filter({$0.name == buyer}).first
+                if result == nil {
+                    //add the buyer to the buyers array
+                    let name: String = buyer
+                    let amount: Float = Float(String(format: "%.2f", item.price/Float(item.buyers.count)))!
+                    let items: [String] = [item.name]
+                    let newBuyer = Buyer(expanded: false, name: name, amount: amount, items: items)
+                    buyers.append(newBuyer)
+                } else {
+                    //update the amount and item list of buyer
+                    print("adding")
+                    result?.amount += Float(String(format: "%.2f", item.price/Float(item.buyers.count)))!
+                    result?.items.append(item.name)
+                }
+            }
+        }
     }
     
     func setTotalLabel() {
