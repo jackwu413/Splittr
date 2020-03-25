@@ -11,10 +11,9 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-//    var payments: [String: Float]?
-//    var items: [Item]?
-//    var keys: [String] = []
-//    var itemList: [String:[String]]?
+    @IBOutlet weak var formatButton: UIBarButtonItem!
+    
+    
     var buyers: [Buyer]?
     
     override func viewDidLoad() {
@@ -25,10 +24,36 @@ class ResultsViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func formatPressed(_ sender: UIBarButtonItem) {
+        if formatButton.title == "Expand" {
+            formatButton.title = "Collapse"
+            for i in 0 ... buyers!.count-1 {
+                var indexPaths = [IndexPath]()
+                for row in buyers![i].items.indices {
+                    indexPaths.append(IndexPath(row: row, section: i))
+                }
+                buyers![i].expanded = true
+                tableView.insertRows(at: indexPaths, with: .fade)
+            }
+        } else {
+            formatButton.title = "Expand"
+            for i in 0 ... buyers!.count-1 {
+                var indexPaths = [IndexPath]()
+                for row in buyers![i].items.indices {
+                    indexPaths.append(IndexPath(row: row, section: i))
+                }
+                buyers![i].expanded = false
+                tableView.deleteRows(at: indexPaths, with: .fade)
+            }
+        }
+    }
+    
     @IBAction func donePressed(_ sender: UIButton) {
         //Persist Data to realm
         //Navigate back to home screen
     }
+    
+
     
 }
 
@@ -45,11 +70,11 @@ extension ResultsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buyers![section].items.count
-//        print("Rows: \(payments!.count)")
-//        return payments!.count
-//        let person = keys[section]
-//        return itemList![person]!.count
+        if !buyers![section].expanded {
+            return 0
+        } else {
+            return buyers![section].items.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
